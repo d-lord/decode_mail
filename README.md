@@ -13,22 +13,24 @@ Python = Good
 Also supports stdin input and multiple arguments:
 
 ```
-$ decode_mail '=?utf-8?b?QmFkZ2VyIGJhZGdlciBiYWRnZXIgYmFkZ2VyIA==?=' '=?utf-8?b?TXVzaHJvb20sIG11c2hyb29tIQ==?='
-Badger badger badger badger Mushroom, mushroom!
-
 $ decode_mail
 =?utf-8?b?QmFkZ2VyIGJhZGdlciBiYWRnZXIgYmFkZ2VyIA==?=
 =?utf-8?b?TXVzaHJvb20sIG11c2hyb29tIQ==?=
 ^D
 Badger badger badger badger Mushroom, mushroom!
 Translate? [y/n] n
+
+$ decode_mail '=?utf-8?b?QmFkZ2VyIGJhZGdlciBiYWRnZXIgYmFkZ2VyIA==?=' '=?utf-8?b?TXVzaHJvb20sIG11c2hyb29tIQ==?='
+Badger badger badger badger Mushroom, mushroom!
 ```
+
+You might want to quote your arguments because shells like to interpret the `?` character.
 
 ### Requirements
 
 Python ≥ 3.6 for those sweet, sweet format strings.
 
-Optional Google Translate feature requires the `translator` module.
+Optional Google Translate feature requires the `googletrans` module.
 
 I suggest cloning it somewhere local and then linking it into your path as `decode_mail`.
 
