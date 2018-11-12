@@ -28,6 +28,10 @@ Translate? [y/n] n
 
 Python ≥ 3.6 for those sweet, sweet format strings.
 
+Optional Google Translate feature requires the `translator` module.
+
+I suggest cloning it somewhere local and then linking it into your path as `decode_mail`.
+
 ### Caveats
 
-This is a really lazy implementation of a small part of the spec and only really works with subject lines. That's good enough for me.
+This is a really lazy implementation of a small part of the spec and only really works with subject lines. That's good enough for me. For more rigour, check the rest of the internet.
