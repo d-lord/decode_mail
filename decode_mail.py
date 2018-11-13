@@ -32,12 +32,8 @@ def flatten(items: Iterable) -> Iterable:
         else:
             yield x
 
-def parse_blocks(blocks: Iterable[str]) -> Iterable[str]:
-    """ For each block, decode it and offer to translate it. """
-    for block in blocks:
-        yield parse_block(block)
-
 def parse_block(block: str) -> str:
+    """ Given a block like '=?utf-8?b?UwU...', return its python-string representation. """
     try:
         match = pattern.search(block)
         charset, encoding, raw_text = match.groups()
@@ -63,7 +59,7 @@ if __name__ == '__main__':
     else:
         blocks = list(flatten(sys.stdin.read().split()))
 
-    result = ''.join(parse_blocks(blocks))
+    result = ''.join(parse_block(block) for block in blocks)
     print(result)
 
     if not blocks:  # gracefully handle an immediate EOF (don't offer to translate it)
